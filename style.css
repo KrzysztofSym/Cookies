@@ -1,0 +1,229 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #ffeeef;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 750px;
+
+    animation: scaleUp 1s ease-in-out;
+     transform-origin: center center;
+}
+
+.header {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 4rem;
+    padding: 1.5rem;
+    border-radius: 3rem;
+    background-color: #a20062;
+    color: white;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) -5px 9px 25px -10px;
+    transition: 0.2s;
+}
+
+.header span {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translatey(-50%);
+    background-color: #82004e;
+}
+
+.header p {
+    margin-right: 1.5rem;
+}
+
+.header a {
+    color: white;
+}
+
+
+main {
+    width: 40%;
+    max-width: 400px;
+    min-height: 15rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) -10px 9px 25px -10px;
+    position: relative;
+    transition: .2s;
+}
+
+main:hover {
+    scale: 1.04;
+}
+
+.material-symbols-outlined {
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.material-symbols-outlined:hover {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 5px 15px -3px;
+}
+
+.material-symbols-outlined:active, .btns button:active {
+    scale: 0.9;
+}
+
+main span {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: 1px solid lightgray;
+}
+
+main img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 0 auto 2rem;
+    transition: .2s;
+}
+
+
+p, a {
+    font-size: .65rem;
+}
+a {
+    text-decoration: underline;
+}
+main p {
+    text-align: center;
+
+}
+
+main a {
+    color: #a20062;
+}
+
+main > a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+
+.btns {
+    margin: 1rem 0;
+    display: flex;
+    gap: .5rem;
+}
+
+.btns button {
+    width: 100%;
+    padding: .5rem 0;
+    margin-top: .5rem;
+    border-radius: 3px;
+    font-size: .65rem;
+    background-color: #a20062;
+    color: white;
+    transition: .2s;
+}
+
+.btns button:hover {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 5px 15px -3px;
+    background-color: #82004e;
+}
+
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* Comic bubble text field */
+
+@font-face {
+    font-family: 'SequentialistBB';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2') format('woff2'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+.bubble {
+    font-family: SequentialistBB, cursive;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    text-align: center;
+    height: 0;
+    box-sizing: content-box;
+    transform: scaleX(-1);
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg);
+    width: 4.5rem;
+    height: 4rem;
+    margin: 0.2rem;
+    position: absolute;
+    top: 2rem;
+    left: calc(50% - 3.6rem);
+    opacity: 0;
+    scale: 0;
+    transition: .2s;
+}
+
+.bubble:hover, img:hover + .bubble {
+    opacity: 1;
+    scale: 1;
+    top: .5rem;
+    left: calc(50% - 5.6rem);
+}
+
+blockquote.speech {
+    position: absolute;
+    right: 50%;
+    top: 8%;
+    text-align: center;
+    width: 85%;
+    font-size: 0.67rem;
+    transform: scaleX(-1) translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 450px;
+    }
+    main {
+        width: 300px;
+    }
+    main:hover {
+        scale: 1;
+    }
+
+    .btns {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .header {
+        margin: 0.5rem auto;
+    }
+    
+}
+
+
+
+
